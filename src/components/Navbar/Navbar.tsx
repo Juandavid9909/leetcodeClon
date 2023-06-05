@@ -12,7 +12,7 @@ const Navbar = () => {
     return (
         <div className="bg-white flex items-center justify-between sm:px-12 px-2 md:px-24">
             <Link href="/" className="flex items-center justify-center h-12">
-                <Image src="/leetcode-black.svg" alt="Leetcode" width={ 200 } height={ 20 } className=" w-32 h-50" />
+                <Image src="/leetcode-black.svg" alt="Leetcode" width={ 200 } height={ 200 } className="w-32 h-50" />
             </Link>
 
             <div className="flex items-center">
