@@ -7,6 +7,7 @@ import { useSetRecoilState } from "recoil";
 import Image from "next/image";
 import Link from "next/link";
 import Logout from "../Buttons/Logout";
+import Timer from "../Timer/Timer";
 
 type TopbarProps = {
     problemPage?: boolean
@@ -63,6 +64,10 @@ const Topbar: React.FC<TopbarProps> = ({ problemPage }) => {
                         >
                             <button className="bg-dark-fill-3 py-1 px-2 cursor-pointer rounded ">Sign In</button>
                         </Link>
+                    ) }
+
+                    { problemPage && (
+                        <Timer />
                     ) }
 
                     { user && (
