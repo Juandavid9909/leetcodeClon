@@ -1,3 +1,4 @@
+import Playground from "./Playground/Playground";
 import ProblemDescription from "./ProblemDescription/ProblemDescription";
 import Split from "react-split";
 
@@ -6,7 +7,7 @@ const Workspace = () => {
         <Split className="split" minSize={ 0 }>
             <ProblemDescription />
 
-            <div>Code editor</div>
+            <Playground />
         </Split>
     );
 }
