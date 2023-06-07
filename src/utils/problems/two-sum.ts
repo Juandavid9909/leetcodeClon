@@ -1,24 +1,5 @@
+import { Problem } from "../types/problem";
 import assert from "assert";
-
-export type Example = {
-    id: number,
-    inputText: string,
-    outputText: string,
-    explanation?: string,
-    img?: string
-};
-
-export type Problem = {
-	id: string,
-	title: string,
-	problemStatement: string,
-    examples: Example[],
-    constraints: string,
-    order: number,
-    starterCode: string,
-    handlerFunction: ((fn: any) => boolean) | string,
-    starterFunctionName: string
-};
 
 const starterCodeTwoSum = `function twoSum(nums, target) {
     // Write your code here
