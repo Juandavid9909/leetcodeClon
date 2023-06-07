@@ -1,10 +1,11 @@
-import { auth } from '@/firebase/firebase';
+import { auth, firestore } from '@/firebase/firebase';
 import { authModalState } from '@/atoms/authModalAtom';
 import { toast } from 'react-toastify';
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
 import { useSetRecoilState } from 'recoil';
+import { doc, setDoc } from 'firebase/firestore';
 
 const Signup = () => {
     const router = useRouter();
@@ -33,15 +34,32 @@ const Signup = () => {
         }
 
         try {
+            toast.loading("Creating your account...", { position: "top-center", toastId: "loadingToast" });
             const newUser = await createUserWithEmailAndPassword(inputs.email, inputs.password);
 
             if(!newUser) {
                 return;
             }
 
+            const userData = {
+                uid: newUser.user.uid,
+                email: newUser.user.email,
+                displayName: inputs.displayName,
+                createdAt: Date.now(),
+                updatedAt: Date.now(),
+                likedProblems: [],
+                dislikedProblems: [],
+                solvedProblems: [],
+                starredProblems: []
+            }
+
+            await setDoc(doc(firestore, "users", newUser.user.uid), userData);
+
             router.push("/");
         } catch (error: any) {
             toast.error(error.message, { position: "top-center", autoClose: 3000 });
+        } finally {
+            toast.dismiss("loadingToast");
         }
     }
 
