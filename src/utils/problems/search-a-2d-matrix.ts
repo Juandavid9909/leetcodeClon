@@ -57,20 +57,20 @@ export const search2DMatrix: Problem = {
 		{
 			id: 0,
 			inputText: `matrix = [
-              [1,3,5,7],
-              [10,11,16,20],
-              [23,30,34,60]
-            ], target = 3`,
+			[1,3,5,7],
+			[10,11,16,20],
+			[23,30,34,60]
+		], target = 3`,
 			outputText: `true`,
 			img: example1.src,
 		},
 		{
 			id: 1,
 			inputText: `matrix = [
-              [1,3,5,7],
-              [10,11,16,20],
-              [23,30,34,60]
-            ], target = 13`,
+			[1,3,5,7],
+			[10,11,16,20],
+			[23,30,34,60]
+		], target = 13`,
 			outputText: `false`,
 			img: example2.src,
 		},
