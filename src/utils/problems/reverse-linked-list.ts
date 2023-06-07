@@ -21,7 +21,7 @@ class LinkedList {
 			prev = current;
 			current = next;
 		}
-        
+
 		return prev!;
 	}
 }
@@ -52,7 +52,7 @@ export const reverseLinkedListHandler = (fn: any) => {
 		console.log("Error from reverseLinkedListHandler: ", error);
 		throw new Error(error);
 	}
-};
+}
 
 function createLinkedList(values: number[]): LinkedList {
 	const head = new LinkedList(values[0]);
