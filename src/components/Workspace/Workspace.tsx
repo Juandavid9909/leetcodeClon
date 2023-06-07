@@ -13,7 +13,7 @@ const Workspace: React.FC<WorkspaceProps> = ({ problem }) => {
             <ProblemDescription problem={ problem } />
 
             <div className="bg-dark-fill-2">
-                <Playground />
+                <Playground problem={ problem } />
             </div>
         </Split>
     );
