@@ -40,7 +40,7 @@ export const search2DMatrixHandler = (fn: any) => {
 
 const starterCodeSearch2DMatrixJS = `// Do not edit function name
 function searchMatrix(matrix, target) {
-    // Write your code here
+  // Write your code here
 };`;
 
 export const search2DMatrix: Problem = {
