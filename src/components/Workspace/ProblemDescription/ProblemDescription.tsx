@@ -12,10 +12,11 @@ import Image from "next/image";
 import RectangleSkeleton from "@/components/Skeletons/RectangleSkeleton";
 
 type ProblemDescriptionProps = {
-	problem: Problem
+	problem: Problem,
+	_solved: boolean
 };
 
-const ProblemDescription: React.FC<ProblemDescriptionProps> = ({ problem }) => {
+const ProblemDescription: React.FC<ProblemDescriptionProps> = ({ problem, _solved }) => {
 	const [user] = useAuthState(auth);
 	const {
 		currentProblem,
@@ -203,7 +204,7 @@ const ProblemDescription: React.FC<ProblemDescriptionProps> = ({ problem }) => {
 									className={ `${ problemDifficultyClass } inline-block rounded-[21px] bg-opacity-[.15] px-2.5 py-1 text-xs font-medium capitalize` }
 								>{ currentProblem.difficulty }</div>
 
-								{ solved && (
+								{ (solved || _solved) && (
 									<div className="rounded p-[3px] ml-4 text-lg transition-colors duration-200 text-green-s text-dark-green-s">
 										<BsCheck2Circle />
 									</div>
