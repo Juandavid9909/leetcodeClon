@@ -6,6 +6,7 @@ const Logout = () => {
     const [signOut, loading, error] = useSignOut(auth);
 
     const handleLogout = () => {
+        localStorage.clear();
         signOut();
     }
 
